@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>counter</title>
+    <script src="./new.js"></script>
+</head>
+<body>
+    <h1 class="mt-5 mb-5 text-5xl">people counter</h1>
+    <h2 id="count-el" class="text-3xl font-bold mb-5">0</h2>
+    <div class="my-5 text-white flex flex-wrap gap-2 max-w-lg mx-auto px-8">
+    <button id="increment-btn" onclick="increment()" class="min-w-36 flex-1 py-3 bg-red-800 border-black border-2">INCREMENT</button>
+    <button id="decrement-btn" onclick="decrement()" class="min-w-36 flex-1 py-3 bg-red-800 border-black border-2">DECREMENT</button>
+    <button id="save-btn" onclick="save()" class="min-w-36 flex-1 py-3 bg-red-800 border-black border-2">SAVE</button>
+    </div>
+    <p>previous entries: <span id="save-el"></span></p>
+</body>
+</html>
