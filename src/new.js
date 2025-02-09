@@ -5,7 +5,7 @@ let saveEl = null
 window.addEventListener("DOMContentLoaded", (e) => {
     saveEl = document.getElementById('save-el')
     countEl = document.getElementById('count-el')
-    colors = ["green", "red", "rgba(133,122,200)", "#f15025"]
+    colors = ["green", "red", "rgba(133,122,200)", "#f15025", "yellow"]
     btn = document.getElementById("btn")
     color = document.querySelector(".color")
     btn.addEventListener("click", function () {
