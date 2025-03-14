@@ -10,6 +10,23 @@
 </head>
 
 <body class="bg-blue-200">
+  <!-- sidebar toggle -->
+  <button id="sidebar-toggle"
+    class="max-lg:hidden fixed top-4 right-12 bg-transparent transition-all duration-300">
+    <div class="hamburger absolute">
+      <span class="hamburger-top"></span>
+      <span class="hamburger-middle"></span>
+      <span class="hamburger-bottom"></span>
+    </div>
+  </button>
+  <div id="sidebar-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-screen w-screen"></div>
+  <aside class="sidebar">
+    <div class="flex py-3">
+      <h1 class="text-3xl font-bold mx-10 text-cyan-900">js projex</h1>
+      <button id="close-btn"
+        class="fixed right-4 top-4 size-10 bg-transparent text-red-600 transition-all duration-300 hover:text-red-400 hover:rotate-180">X</button>
+    </div>
+  </aside>
   <!-- navbar toggle -->
   <nav class="relative container mx-auto">
     <div class="flex items-center justify-between">
@@ -32,9 +49,9 @@
         <a href="#" class="text-xl  hover:text-yellow-500 transition-all duration-300">about</a>
       </div>
       <button id="menu-btn" class="block hamburger md:hidden">
-        <span class="hamburger-top"></span>
-        <span class="hamburger-middle"></span>
-        <span class="hamburger-bottom"></span>
+        <div class="hamburger-top"></div>
+        <div class="hamburger-middle"></div>
+        <div class="hamburger-bottom"></div>
       </button>
     </div>
     <!-- mobile menu -->
@@ -59,7 +76,7 @@
   <!-- reviews page -->
   <section class="relative container my-10  mx-auto h-[40rem] w-full">
     <h1 class="mx-auto py-8 text-5xl font-semibold underline">Our Reviews</h1>
-    <article class="relative container mt-4 pt-4 mx-auto h-[30rem] w-full bg-white shadow-black shadow-xl">
+    <article class="relative container mt-4 pt-4 mx-auto h-[30rem] w-full bg-gray-100 shadow-black shadow-xl">
       <img id="img" src="/src/img/person-1.jpeg"
         class="mx-auto rounded-full border border-black h-40 w-40 object-cover shadow-lg shadow-cyan-800" alt="">
       <h2 class="pt-4 text-lg" id="author">lalu yadav</h2>
