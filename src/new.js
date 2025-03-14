@@ -23,6 +23,30 @@ window.addEventListener("DOMContentLoaded", (e) => {
       nav.classList.toggle('flex')
       nav.classList.toggle('hidden')
     })
+
+    const togglebtn = document.querySelector("#sidebar-toggle")
+    const closebtn = document.querySelector("#close-btn")
+    const sidebar = document.querySelector(".sidebar")
+    const sidebarBg = document.querySelector("#sidebar-bg")
+  
+    function toogleSiderBar() {
+      sidebar.classList.toggle("show-sidebar")
+      sidebarBg.classList.toggle("opacity-0")
+      sidebarBg.classList.toggle("pointer-events-none")
+    }
+  
+    togglebtn.addEventListener("click", function () {
+      toogleSiderBar()
+    })
+  
+    closebtn.addEventListener("click", function () {
+      toogleSiderBar()
+    })
+  
+    sidebarBg.addEventListener("click", function () {
+      toogleSiderBar()
+    })
+    
 })
 
 function getRandomNumber() {
