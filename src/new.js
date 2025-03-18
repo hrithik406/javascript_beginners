@@ -46,7 +46,24 @@ window.addEventListener("DOMContentLoaded", (e) => {
     sidebarBg.addEventListener("click", function () {
       toogleSiderBar()
     })
-    
+
+    const overlay = document.querySelector("#modal-overlay")
+    const modal = document.querySelector("#modal-btn")
+    const close = document.querySelector(".close-modal")
+  
+    function togglemodal() {
+      overlay.classList.toggle("open-modal")
+    }
+  
+    modal.addEventListener("click", function (){
+      togglemodal()
+      console.log("opened modal")
+    })
+  
+    close.addEventListener("click", function (){
+      togglemodal()
+    })
+
 })
 
 function getRandomNumber() {
