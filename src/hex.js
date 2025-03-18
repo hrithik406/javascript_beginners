@@ -95,22 +95,46 @@ window.addEventListener("DOMContentLoaded", (e) => {
   const sidebar = document.querySelector(".sidebar")
   const sidebarBg = document.querySelector("#sidebar-bg")
 
-  function toogleSiderBar() {
+  function toogleSideBar() {
     sidebar.classList.toggle("show-sidebar")
     sidebarBg.classList.toggle("opacity-0")
     sidebarBg.classList.toggle("pointer-events-none")
   }
 
   togglebtn.addEventListener("click", function () {
-    toogleSiderBar()
+    toogleSideBar()
   })
 
   closebtn.addEventListener("click", function () {
-    toogleSiderBar()
+    toogleSideBar()
   })
 
   sidebarBg.addEventListener("click", function () {
-    toogleSiderBar()
+    toogleSideBar()
+  })
+
+  const overlay = document.querySelector("#modal-overlay")
+  const modal = document.querySelector("#modal-btn")
+  const close = document.querySelector("#close-modal")
+  const modalbg = document.querySelector("#modal-bg")
+
+  function togglemodal() {
+    overlay.classList.toggle("open-modal")
+    modalbg.classList.toggle("opacity-0")
+    modalbg.classList.toggle("pointer-events-none")
+  }
+
+  modal.addEventListener("click", function (){
+    togglemodal()
+    console.log("opened modal")
+  })
+
+  close.addEventListener("click", function (){
+    togglemodal()
+  })
+
+  modalbg.addEventListener("click", function (){
+    togglemodal()
   })
 
 })

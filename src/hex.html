@@ -114,8 +114,15 @@
     <h1 class="mx-auto text-5xl bg-yellow-500 w-80 pb-2 rounded-xl text-white">Modal</h1>
     <button class="flex mx-auto justify-center text-yellow-500 font-bold w-32 h-8 border-2 border-yellow-500 hover:text-lg hover:w-[7.5rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300"
     id="modal-btn">open modal</button>
-    
 
+    <div id="modal-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-screen w-screen"></div>
+    <div id="modal-overlay" class="fixed grid size-full bg-slate-400 place-items-center invisible -z-10 transition-all duration-300">
+      <div class="relative h-[30vh] w-[90vh] bg-white rounded-lg grid text-center max-w-[620px] place-items-center">
+        <header class="bg-yellow-500 text-xl font-semibold">CONTENT</header>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In atque repudiandae, aut quidem officiis quis accusamus ipsum? Reprehenderit, enim? Corrupti voluptatum fugiat saepe ullam nisi necessitatibus beatae consequuntur pariatur repellendus?</p>
+        <button id="close-modal" class="absolute top-4 right-4 size-8 text-red-600 transition-all duration-300 hover:rotate-90">X</button>
+      </div>
+    </div>
    </section>
   <!-- reviews page -->
   <section class="relative container my-10  mx-auto h-[40rem] w-full">
@@ -129,11 +136,9 @@
         aliquid accusamus soluta assumenda iure aliquam magni fugit, et id voluptate consequuntur ex consectetur.
         Expedita est fugiat iusto doloremque soluta quibusdam.</p>
       <div class="pt-8 space-x-3 text-cyan-600">
-        <button id="prev-btn">
-          << </button>
-            <button id="random-btn"
-              class="border-2 border-cyan-600 rounded-lg w-24 hover:w-[5.5rem] hover:bg-cyan-900 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300">Random</button>
-            <button id="next-btn"> >> </button>
+        <button id="prev-btn" > << </button>
+        <button id="random-btn" class="border-2 border-cyan-600 rounded-lg w-24 hover:w-[5.5rem] hover:bg-cyan-900 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300">Random</button>
+        <button id="next-btn" > >> </button>
       </div>
     </article>
   </section>

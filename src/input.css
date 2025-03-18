@@ -129,3 +129,8 @@ body {
         width: 400px;
     }
 }
+
+.open-modal {
+    visibility: visible;
+    z-index: 10;
+}
