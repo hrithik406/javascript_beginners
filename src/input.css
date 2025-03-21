@@ -142,11 +142,11 @@ body {
     z-index: 10;
 }
 
-#question-text {
+.question-text {
     display: none;
 }
 
-.show-text #question-text {
+.show-text .question-text {
     display: block;
 }
 

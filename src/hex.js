@@ -133,7 +133,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
   const ques = document.querySelectorAll("#question")
 
   ques.forEach(function (question){
-    const quesbtn = question.querySelector("question-btn")
+    const quesbtn = question.querySelector("#question-btn")
 
     quesbtn.addEventListener("click", function() {
       ques.forEach(function (item) {
