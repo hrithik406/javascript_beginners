@@ -115,7 +115,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
 
   const overlay = document.querySelector("#modal-overlay")
   const modal = document.querySelector("#modal-btn")
-  const close = document.querySelector(".close-modal")
+  const close = document.querySelector("#close-modal")
 
   function togglemodal() {
     overlay.classList.toggle("open-modal")
@@ -129,7 +129,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
   close.addEventListener("click", function (){
     togglemodal()
   })
-  
+
 })
 
 function getRandomNumber() {

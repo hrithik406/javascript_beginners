@@ -102,13 +102,16 @@
     </div>
   </nav>
   <!-- color flipper -->
-  <h1 class="mx-auto mt-10 text-5xl bg-cyan-950 w-96 pb-3 rounded-xl text-white">color flipper</h1>
-  <div class="container mx-auto pb-10">
-    <h2 class="text-2xl py-3">background color : <span class="color">#f1f5f8</span></h2>
-    <button
-      class="flex mx-auto justify-center text-cyan-800 font-bold w-32 h-8 border-2 border-cyan-800 hover:text-lg hover:w-[7.5rem] hover:bg-cyan-950 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300"
-      id="btn">click me</button>
-  </div>
+   <section>
+    <h1 class="mx-auto mt-10 text-5xl bg-cyan-950 w-96 pb-3 rounded-xl text-white">color flipper</h1>
+    <div class="container mx-auto pb-10">
+      <h2 class="text-2xl py-3">background color : <span class="color">#f1f5f8</span></h2>
+      <button
+        class="flex mx-auto justify-center text-cyan-800 font-bold w-32 h-8 border-2 border-cyan-800 hover:text-lg hover:w-[7.5rem] hover:bg-cyan-950 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-300"
+        id="btn">click me</button>
+    </div>
+   </section>
+
   <!-- Modal -->
    <section class="container relative mx-auto py-16 h-[15rem] space-y-6">
     <h1 class="mx-auto text-5xl bg-yellow-500 w-80 pb-2 rounded-xl text-white">Modal</h1>
@@ -119,11 +122,11 @@
     <div id="modal-overlay" class="fixed grid -top-6 left-0 size-full place-items-center bg-black/40 invisible -z-10 transition-all duration-75">
       <div class="relative h-auto w-[80vh] bg-white rounded-xl grid text-center max-w-[620px] place-items-center">
         <header class="relative flex justify-center pt-2 text-center text-white bg-yellow-500 text-4xl font-bold h-[10vh] w-full">CONTENT
-          <button class="close-modal absolute right-3 size-8 text-xl text-red-600 transition-all duration-75 hover:scale-125 hover:text-red-500">X</button>
+          <button id="close-modal" class="absolute right-3 size-8 text-xl text-red-600 transition-all duration-0 hover:scale-125 hover:text-red-500">X</button>
         </header>
         <p class="line-clamp-2 font-medium p-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. In atque repudiandae, aut quidem officiis quis accusamus ipsum? Reprehenderit, enim? Corrupti voluptatum fugiat saepe ullam nisi necessitatibus beatae consequuntur pariatur repellendus?</p>
-        <button
-        class="flex mx-auto my-3 justify-center text-yellow-500 font-bold w-32 h-8 border-2 border-yellow-500 hover:text-lg hover:w-[7.5rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-75"
+        <button id="close-modal"
+        class="flex mx-auto my-3 justify-center text-yellow-500 font-bold w-32 h-8 border-2 border-yellow-500 hover:text-lg hover:w-[7.5rem] hover:bg-yellow-500 hover:border-transparent hover:rounded-xl hover:text-white transition-all ease-in-out duration-0"
         >good job</button>
       </div>
     </div>
@@ -145,6 +148,22 @@
         <button id="next-btn" > >> </button>
       </div>
     </article>
+  </section>
+<!-- Questions -->
+  <section class="relative bg-white container my-10 mx-auto w-full">
+    <h1 class="text-5xl text-yellow-500 font-serif">F . A . Q</h1>
+    <div class="max-w-[620]">
+      <article class="rounded-lg shadow-md p-6 mb-8">
+        <div class="flex justify-between items-center pb-4">
+          <h1>Do you accept all major credit cards??</h1>
+          <button type="button" class="text-xl text-yellow-500 transition-all duration-300">
+            <span class="up-icon hover:rotate-90">></span>
+            <span class="down-icon rotate-90 hover:rotate-180">></span>
+          </button>
+        </div>
+        <p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo laborum, maxime expedita natus optio corrupti ratione molestiae ab soluta recusandae.</p>
+      </article>
+    </div>
   </section>
 </body>
 
