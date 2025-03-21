@@ -1372,23 +1372,23 @@ body {
   z-index: 10;
 }
 
-.question-text {
+#question-text {
   display: none;
 }
 
-.show-text .question-text {
+.show-text #question-text {
   display: block;
 }
 
-.minus-icon {
+.down-icon {
   display: none;
 }
 
-.show-text .minus-icon {
+.show-text .down-icon {
   display: inline;
 }
 
-.show-text .plus-icon {
+.show-text .up-icon {
   display: none;
 }
 
@@ -1413,6 +1413,12 @@ body {
 .hover\:scale-125:hover {
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-50:hover {
+  --tw-scale-x: .5;
+  --tw-scale-y: .5;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
