@@ -129,6 +129,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
     // console.log(closed)
     closed.addEventListener("click", function (){
       togglemodal()
+      console.log(m)
     })
   })
   
@@ -149,7 +150,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
 
   ques.forEach(function (question){
     const quesbtn = question.querySelector("#question-btn")
-    console.log(quesbtn)
+    // console.log(quesbtn)
 
     quesbtn.addEventListener("click", function() {
       ques.forEach(function (item) {

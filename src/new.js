@@ -64,6 +64,23 @@ window.addEventListener("DOMContentLoaded", (e) => {
       togglemodal()
     })
 
+  const ques = document.querySelectorAll("#question")
+
+  ques.forEach(function (question){
+    const quesbtn = question.querySelector("#question-btn")
+    // console.log(quesbtn)
+
+    quesbtn.addEventListener("click", function() {
+      ques.forEach(function (item) {
+        if (item !== question){
+          item.classList.remove("show-text")
+        }
+      })
+
+      question.classList.toggle("show-text")
+    })
+  })
+
 })
 
 function getRandomNumber() {
