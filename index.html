@@ -9,14 +9,6 @@
 </head>
 <body class="bg-blue-200 box-border">
   <!-- sidebar -->
-  <button id="sidebar-toggle"
-  class="max-lg:hidden fixed top-4 right-12 bg-transparent transition-all duration-300">
-  <div class="hamburger absolute">
-    <span class="hamburger-top"></span>
-    <span class="hamburger-middle"></span>
-    <span class="hamburger-bottom"></span>
-  </div>
-</button>
 <div id="sidebar-bg" class="z-[10] fixed bg-black/40 pointer-events-none opacity-0 transition-all duration-200 h-screen w-screen"></div>
 <aside class="sidebar">
   <div class="flex py-3">
@@ -63,6 +55,13 @@
 </aside>
   <!-- navbar -->
   <nav class="container mx-auto p-4">
+    <button id="sidebar-toggle" class="max-lg:hidden fixed top-4 right-12 bg-transparent transition-all duration-300">
+      <div class="hamburger absolute z-20 top-2">
+       <span class="hamburger-top"></span>
+       <span class="hamburger-middle"></span>
+       <span class="hamburger-bottom"></span>
+      </div>
+    </button>
     <div class="flex items-center justify-between">
        <div class="pt-2">
          <h1 class="text-3xl font-bold mx-10">js projex</h1>
