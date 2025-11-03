@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .calculator {
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      width: 300px;
+    }
+    .display {
+      background-color: #222;
+      color: #fff;
+      font-size: 2em;
+      padding: 10px;
+      text-align: right;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+    }
+    button {
+      background-color: #555;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      font-size: 1.2em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #777;
+    }
+    .operator {
+      background-color: #ff9500;
+    }
+    .operator:hover {
+      background-color: #ffaa33;
+    }
+    .equals {
+      background-color: #28a745;
+      grid-column: span 2;
+    }
+    .equals:hover {
+      background-color: #32c850;
+    }
+    .clear {
+      background-color: #dc3545;
+      grid-column: span 2;
+    }
+    .clear:hover {
+      background-color: #e4606d;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button onclick="deleteLast()">⌫</button>
+      
+      <button class="operator" onclick="appendToDisplay('*')">×</button>
+      <button onclick="appendToDisplay('7')">7</button>
+      <button onclick="appendToDisplay('8')">8</button>
+      <button onclick="appendToDisplay('9')">9</button>
+      <button class="operator" onclick="appendToDisplay('-')">-</button>
+      <button onclick="appendToDisplay('4')">4</button>
+      <button onclick="appendToDisplay('5')">5</button>
+      <button onclick="appendToDisplay('6')">6</button>
+      <button class="operator" onclick="appendToDisplay('+')">+</button>
+      <button onclick="appendToDisplay('1')">1</button>
+      <button onclick="appendToDisplay('2')">2</button>
+      <button onclick="appendToDisplay('3')">3</button>
+      <button class="operator" onclick="appendToDisplay('/')">/</button>
+      <button onclick="appendToDisplay('0')">0</button>
+      <button onclick="appendToDisplay('.')">.</button>
+      <button class="equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+    let currentInput = '0';
+    let lastInputWasOperator = false;
+
+    function appendToDisplay(value) {
+      if (currentInput === '0' && value !== '.') {
+        currentInput = value;
+      } else if (value === '.' && currentInput.includes('.')) {
+        return;
+      } else if (['+', '-', '*', '/'].includes(value) && lastInputWasOperator) {
+        currentInput = currentInput.slice(0, -1) + value;
+      } else {
+        currentInput += value;
+      }
+      lastInputWasOperator = ['+', '-', '*', '/'].includes(value);
+      display.textContent = currentInput;
+    }
+
+    function clearDisplay() {
+      currentInput = '0';
+      lastInputWasOperator = false;
+      display.textContent = currentInput;
+    }
+
+    function deleteLast() {
+      currentInput = currentInput.slice(0, -1) || '0';
+      lastInputWasOperator = ['+', '-', '*', '/'].includes(currentInput.slice(-1));
+      display.textContent = currentInput;
+    }
+
+    function calculate() {
+      try {
+        let result = eval(currentInput);
+        if (result === Infinity || result === -Infinity) {
+          display.textContent = 'Error';
+          currentInput = '0';
+        } else {
+          currentInput = result.toString();
+          display.textContent = currentInput;
+        }
+        lastInputWasOperator = false;
+      } catch (error) {
+        display.textContent = 'Error';
+        currentInput = '0';
+        lastInputWasOperator = false;
+      }
+    }
+  </script>
+</body>
+</html>
