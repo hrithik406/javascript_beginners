@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover-Evasive Button</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth sliding animation */
+        #elusive-btn {
+            transition: left 0.3s ease-out, top 0.3s ease-out;
+        }
+
+        /* Optional: subtle pulse to invite hover */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(168, 85, 247, 0.4); }
+            50% { box-shadow: 0 0 25px rgba(236, 72, 153, 0.7); }
+        }
+        #elusive-btn {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 min-h-screen overflow-hidden flex items-center justify-center">
+    
+    <button id="elusive-btn" 
+            class="fixed px-7 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-default select-none">
+        Try to Hover!
+    </button>
+
+    <script>
+        const button = document.getElementById('elusive-btn');
+        let isMoving = false;
+
+        // Move button to random safe position
+        function moveButton() {
+            if (isMoving) return;
+            isMoving = true;
+
+            const maxX = window.innerWidth - button.offsetWidth;
+            const maxY = window.innerHeight - button.offsetHeight;
+
+            console.log(window)
+
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+
+            // Allow next move after animation
+            setTimeout(() => {
+                isMoving = false;
+            }, 400);
+        }
+
+        // Trigger move on mouse enter (hover)
+        button.addEventListener('mouseenter', (e) => {
+            e.preventDefault();
+            moveButton();
+        });
+
+        // Optional: Also move on touch (for mobile)
+        button.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveButton();
+        });
+
+        // Initialize position
+        // window.addEventListener('load', () => {
+        //     moveButton();
+        // });
+
+        // Keep in bounds on resize
+        window.addEventListener('resize', () => {
+            const rect = button.getBoundingClientRect();
+            if (rect.right > window.innerWidth || rect.bottom > window.innerHeight ||
+                rect.left < 0 || rect.top < 0) {
+                moveButton();
+            }
+        });
+    </script>
+</body>
+</html>

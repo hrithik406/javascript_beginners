@@ -12,14 +12,15 @@ async function hello(mes){
     return `${mes} ${counter} ${result}`
 }
 
+hello('hello world').then((val)=>{
+    console.log(val)
+})    
+
 function output(mes){
     counter++
     console.log(`${mes} ${counter}`)
 }
 
-hello('hello world').then((val)=>{
-    console.log(val)
-})
 
 for(let i=0;i<=5;i++){
     output(`loop ${i}`)
